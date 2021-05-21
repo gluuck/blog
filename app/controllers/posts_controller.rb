@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     post = CreatePost.run(post_params)
 
       if post.valid?
-        redirect_to post
+        redirect_to post, notice: "Created"
       else
         @post = post
         render( :new)
@@ -46,11 +46,8 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    DestroyPost.run!(post: @post)
+    redirect_to @post
   end
 
   private
