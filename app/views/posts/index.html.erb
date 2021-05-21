@@ -12,13 +12,13 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts.each do |p| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.post %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= p.title %></td>
+        <td><%= p.post %></td>
+        <td><%= link_to 'Show', p %></td>
+        <td><%= link_to 'Edit', edit_post_path(p) %></td>
+        <td><%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

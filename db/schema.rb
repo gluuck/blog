@@ -22,12 +22,10 @@ ActiveRecord::Schema.define(version: 2021_04_12_073957) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "author_id"
     t.string "title"
     t.text "post"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
 end
